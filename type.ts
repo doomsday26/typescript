@@ -8,9 +8,12 @@ let btn =document.getElementById('btn') !
 btn.addEventListener('click',()=>{
 let a=add(number1,number2)
 console.log(a);
+printresult({value:a as number,timestamp: new Date()})
 })
 
-
+const numarr :number[]=[]
+const strarr:string[]=[]
+type NumOrString=number|string
 
 function add(num1:number|string,num2:number|string){
     if(typeof num1==='number'&&typeof num2==='number'){
@@ -23,4 +26,6 @@ function add(num1:number|string,num2:number|string){
     }
 }
 
-
+function printresult(resultobj:{value:number,timestamp: Date }){
+    console.log(resultobj.value);
+}
